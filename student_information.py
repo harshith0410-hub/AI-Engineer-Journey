@@ -1,3 +1,4 @@
+#Day-1 Student Information System
 print("===== Student Information System =====")
 
 name = input("Enter your name: ")
