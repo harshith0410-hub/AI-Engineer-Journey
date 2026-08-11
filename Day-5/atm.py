@@ -1,6 +1,24 @@
+def balance_check(balance):
+    print("Your current balance is:", balance)
+
+def withdraw_money(balance):
+    withdraw=int(input("Enter the amount you want to withdraw: "))
+    if withdraw>balance:
+        print("Insufficient balance.")
+    else:
+        balance-=withdraw
+        print("Withdrawal successful. Your current balance is:", balance)
+    return balance
+
+def deposit_money(balance):
+    deposit=int(input("Enter the amount you want to deposit: "))
+    balance+=deposit
+    print("Deposit successful. Your current balance is:", balance)
+    return balance
+    
 print("---------Welcome to the ATM---------")
 balance=10000
-print("Your current balance is:", balance)
+balance_check(balance)
 
 
 while True:
@@ -14,21 +32,13 @@ while True:
     n=int(input("Enter your choice: "))
 
     if n==1:
-        print("Your current balance is:", balance)
+        balance_check(balance)
 
     elif n==2:
-        withdraw=int(input("Enter the amount you want to withdraw: "))
-        if withdraw>balance:
-            print("Insufficient balance.")
-        else:
-            balance-=withdraw
-            print("Withdrawal successful. Your current balance is:", balance)
+        balance=withdraw_money(balance)
 
     elif n==3:
-        deposit=int(input("Enter the amount you want to deposit: "))
-        balance+=deposit
-        print("Deposit successful. Your current balance is:", balance)
-
+        balance=deposit_money(balance)
     elif n==4:
         print("Thank you for using the ATM. Goodbye!")
         break
