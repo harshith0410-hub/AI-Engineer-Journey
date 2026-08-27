@@ -19,7 +19,7 @@ class account:
         deposit=int(input("Enter the amount you want to deposit: "))
         self.balance+=deposit
         print("Deposit successful. Your current balance is:", self.balance)
-
+        
 while True:
 
     print("---------Welcome to the Bank Account---------")

@@ -1,8 +1,12 @@
 print("---------Safe Calculator---------")
 
-first_number=float(input("Enter the first number: "))
-second_number=float(input("Enter the second number: "))
-operation=input("Enter the operation (+, -, *, /): ")
+try:
+    first_number=float(input("Enter the first number: "))
+    second_number=float(input("Enter the second number: "))
+    operation=input("Enter the operation (+, -, *, /): ")
+except ValueError:
+    print("Error: Invalid input. Please enter numeric values.")
+    exit()    
 
 if operation=="+":
     result=first_number+second_number
@@ -19,9 +23,5 @@ elif operation=="/":
         print("The result is:", result)
     except ZeroDivisionError:
         print("Error: Division by zero is not allowed.")
-    except ValueError:
-        print("Error: Invalid input. Please enter numeric values.")
-    finally:
-        print("Division operation completed.")
 else:
     print("Error: Invalid operation.")
